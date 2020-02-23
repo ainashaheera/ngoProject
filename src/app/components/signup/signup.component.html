@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot = "start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Sign Up</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <ion-card>
+      <!--<ion-item lines = "full">
+        <ion-label position = "floating">Name</ion-label>
+        <ion-input type = "text" #name required></ion-input>
+      </ion-item>-->
+
+      <ion-item lines = "full">
+        <ion-label position = "floating">Email</ion-label>
+        <ion-input type = "text" #userEmail required></ion-input>
+      </ion-item>
+
+      <ion-item lines = "full">
+        <ion-label position = "floating">Password</ion-label>
+        <ion-input type = "password" #userPassword required></ion-input>
+      </ion-item>
+
+      <!--<ion-item lines = "full">
+        <ion-label position = "floating">Password Confirmation</ion-label>
+        <ion-input type = "password" #password required></ion-input>
+      </ion-item>-->
+
+      <ion-row>
+        <ion-col>
+          <ion-button type = "submit" (click)="authService.SignUp (userEmail.value, userPassword.value)" expand="block">Register</ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-button type ="submit" color ="danger" (click) ="authService.GoogleAuth()" expand ="block">
+            Continue with Google
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <span>Already have an account?><span routerLink="/login">Log In</span></span>
+        </ion-col>
+      </ion-row>
+
+      </ion-card>
+  </form>
+</ion-content>
